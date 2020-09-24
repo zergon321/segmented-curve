@@ -75,7 +75,7 @@ func getSegmentPoints(points plotter.XYs, numberOfSegments int) []pixel.Vec {
 
 		line := lines[lastLine]
 
-		if localLength > step {
+		if localLength-step > epsilon {
 			difference := localLength - step
 			t := difference / line.Len()
 
