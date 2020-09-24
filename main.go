@@ -139,20 +139,12 @@ func run() {
 			imd.Circle(1, 1)
 		}*/
 
-		// Draw the control points.
-		imd.Color = colors.Blue
-
-		for _, point := range controlPoints {
-			imd.Push(pixel.V(float64(point.X), float64(point.Y)))
-			imd.Circle(5, 0)
-		}
-
 		// Draw the curve segments.
-		imd.Color = colors.Green
+		imd.Color = colors.Blue
 
 		for _, point := range segmentPoints {
 			imd.Push(point)
-			imd.Circle(3, 1)
+			imd.Circle(3, 0)
 		}
 
 		imd.Draw(win)
