@@ -22,7 +22,7 @@ const (
 	scaleY           float64 = 300
 	numberOfSegments         = 10
 	epsilon          float64 = 0.001
-	dt               float64 = 0.8
+	dt               float64 = 0.5
 )
 
 func gonumToPixel(xy plotter.XY) pixel.Vec {
@@ -83,6 +83,7 @@ func getSegmentPoints(points plotter.XYs, numberOfSegments int) []pixel.Vec {
 				t*line.A.Y+(1-t)*line.B.Y)
 		} else {
 			lastPoint = line.B
+			lastLine++
 		}
 
 		segmentPoints = append(segmentPoints, lastPoint)
