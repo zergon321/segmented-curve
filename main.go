@@ -112,7 +112,7 @@ func run() {
 	}
 
 	// Divide the curve into equal segments.
-	//segmentPoints := getSegmentPoints(points, numberOfSegments)
+	segmentPoints := getSegmentPoints(points, numberOfSegments)
 
 	cfg := pixelgl.WindowConfig{
 		Title:  "Bezier curve",
@@ -131,12 +131,12 @@ func run() {
 		imd.Clear()
 
 		// Draw the curve and other things.
-		imd.Color = colors.Red
+		/*imd.Color = colors.Red
 
 		for _, point := range points {
 			imd.Push(gonumToPixel(point))
 			imd.Circle(1, 1)
-		}
+		}*/
 
 		// Draw the control points.
 		imd.Color = colors.Blue
@@ -147,12 +147,12 @@ func run() {
 		}
 
 		// Draw the curve segments.
-		/*imd.Color = colors.Green
+		imd.Color = colors.Green
 
 		for _, point := range segmentPoints {
 			imd.Push(point)
 			imd.Circle(3, 1)
-		}*/
+		}
 
 		imd.Draw(win)
 
